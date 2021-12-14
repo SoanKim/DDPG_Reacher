@@ -31,7 +31,7 @@ WEIGHT_DECAY = 0        # L2 weight decay</br>
 </pre>
 
 # Code Implementation
-### DDPG_Reacher-Final.ipynb consists of four parts: ``Network(both actor and critic)``, ``agent``, ``replay buffer``, and ``main``.<br/>
+DDPG_Reacher-Final.ipynb consists of four parts: ``Network``(both actor and critic), ``agent``, ``replay buffer``, and ``main``.<br/>
 
 * ``Network(both actor and critic)`` - Q network: state-action value function. Includes local and target networks of actor and critic.<br/>
 * ``agent`` - Is is the interface between the deep neural network and the environment.<br/>
