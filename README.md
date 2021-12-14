@@ -1,6 +1,6 @@
-# DDPG_Reacher
+### DDPG_Reacher
 This project was provided by [the Deep Reinforcement Learning Nanodegree Course of Udacity.](https://www.udacity.com/course/deep-reinforcement-learning-nanodegree--nd893) The code is base on the pendulum modeling of [the repository of Udacity](https://github.com/udacity/deep-reinforcement-learning/tree/master/ddpg-pendulum).
-# Environment
+### Environment
 In this environment, a double-jointed arm can move to target locations. A reward of +0.1 is provided for each step that the agent's hand is in the goal location. Thus, the goal of your agent is to maintain its position at the target location for as many time steps as possible.
 The observation space consists of 33 variables corresponding to position, rotation, velocity, and angular velocities of the arm. Each action is a vector with four numbers, corresponding to torque applicable to two joints. Every entry in the action vector should be a number between -1 and 1.
 With foundational background in policy gradient methods, it implemented a variation of the methodology known as Deep Deterministic Policy Gradient (DDPG).
@@ -60,7 +60,7 @@ To set up your python environment to run the code in this repository, follow the
     
 2. Place the file in the DRLND GitHub repository, in the `p2_continuous-control/` folder, and unzip (or decompress) the file.
 
-# Requirements
+### Requirements
 tensorflow==1.7.1<br/>
 Pillow>=4.2.1<br/>
 matplotlib<br/>
@@ -76,14 +76,9 @@ pandas<br/>
 scipy<br/>
 ipykernel<br/>
 
-# The Repository Structure
+### The Repository Structure
 * ``DDPG_Reacher-Final.ipynb`` - Includes the environment, agent, model, and DQN functions.<br/>
-* ``Report.md`` - Includes hyperparameters.<br/>
+* ``Report.md`` - Includes hyperparameters, code implementation and future work.<br/>
 * ``result.png`` - Shows the cumulative rewards after training.<br/>
 * ``actor_checkpoint.pth`` - Contains the parameters of the local network of the actor.<br/>
 * ``critic_checkpoint.pth`` - Contains the parameters of the local network of the critic.<br/>
-
-# Ideas for Future Work
-* Hyperparameters would be fine-tuned.
-* The reward plot seems to need more convergence.
-* [The Actor-Dueling-Critic Method for Reinforcement Learning](https://europepmc.org/article/pmc/6479875#B19-sensors-19-01547) would be implemented. In the continuous action space, we cannot output the estimation of each possible action’s advantage value. To do so, we should manually divide the action space and estimate the advantage of the action interval in each state. Through this change, the agent could learn which action interval is good when facing a specific state and pick the action belong to this interval.
