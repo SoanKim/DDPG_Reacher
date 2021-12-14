@@ -6,7 +6,7 @@ The code is base on the pendulum modeling of [the repository of Udacity](https:/
 # DDPG Algorithm
 Modifies DPG inspired by DQN, which enables to use large state and action spaces online.<br/>
 Policy gradients are stochastic, but DDPG is deterministic. Deterministic policy outputs the actual action instead of a probability.<br/>
-<a href="https://www.codecogs.com/eqnedit.php?latex=\bg_white&space;\mu'(s_t)&space;=&space;\mu(s_t|\theta^\mu_t)&plus;N)" target="_blank"><img src="https://latex.codecogs.com/png.latex?\bg_white&space;\mu'(s_t)&space;=&space;\mu(s_t|\theta^\mu_t)&plus;N)" title="\mu'(s_t) = \mu(s_t|\theta^\mu_t)+N)" /></a>
+<a href="https://www.codecogs.com/eqnedit.php?latex=\bg_white&space;\mu'(s_t)&space;=&space;\mu(s_t|\theta^\mu_t)&plus;N)" target="_blank"><img src="https://latex.codecogs.com/png.latex?\bg_white&space;\mu'(s_t)&space;=&space;\mu(s_t|\theta^\mu_t)&plus;N)" title="\mu'(s_t) = \mu(s_t|\theta^\mu_t)+N)" /></a><br/>
 DPG Algorithm is to select an action according to a prob distribution ($\mu$ = deterministic policy)<br/>
 
 <a href="https://www.codecogs.com/eqnedit.php?latex=\bg_white&space;\nabla_\theta^\mu&space;J&space;\approx&space;\mathbb{E}s_t\backsim&space;\rho^\beta[\nabla_{\theta\mu}&space;Q(s,&space;a|\theta^Q)|_s=_{st},&space;_a&space;=&space;_{\mu(st|\theta^\mu)}" target="_blank"><img src="https://latex.codecogs.com/png.latex?\bg_white&space;\nabla_\theta^\mu&space;J&space;\approx&space;\mathbb{E}s_t\backsim&space;\rho^\beta[\nabla_{\theta\mu}&space;Q(s,&space;a|\theta^Q)|_s=_{st},&space;_a&space;=&space;_{\mu(st|\theta^\mu)}" title="\nabla_\theta^\mu J \approx \mathbb{E}s_t\backsim \rho^\beta[\nabla_{\theta\mu} Q(s, a|\theta^Q)|_s=_{st}, _a = _{\mu(st|\theta^\mu)}" /></a>
