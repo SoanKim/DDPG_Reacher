@@ -30,8 +30,8 @@ ipykernel<br/>
 * ``DDPG_Reacher-Final.ipynb`` - Includes the environment, agent, model, and DQN functions.<br/>
 * ``Report.md`` - Includes hyperparameters.<br/>
 * ``result.png`` - Shows the cumulative rewards after training.<br/>
-* ``actor_checkpoint.pth`` - Contains the parameters of the loca network of the actor.<br/>
-* ``critic_checkpoint.pth`` - Contains the parameters of the loca network of the critic.<br/>
+* ``actor_checkpoint.pth`` - Contains the parameters of the local network of the actor.<br/>
+* ``critic_checkpoint.pth`` - Contains the parameters of the local network of the critic.<br/>
 
 # Ideas for Future Work
 * Hyperparameters would be fine-tuned.
