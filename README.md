@@ -9,7 +9,7 @@ The project environment is similar to, but not identical Reacher environment on 
 
 ![Alt Text](https://video.udacity-data.com/topher/2018/June/5b1ea778_reacher/reacher.gif)
 
-# Dependencies 
+### Dependencies 
 
 To set up your python environment to run the code in this repository, follow the instructions below.
 
