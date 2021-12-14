@@ -27,7 +27,7 @@ scipy
 ipykernel
 
 # The Repository Structure
-* ``DDPG_Reacher.ipynb`` - Includes the environment, agent, model, and DQN functions.<br/>
+* ``DDPG_Reacher-Final.ipynb`` - Includes the environment, agent, model, and DQN functions.<br/>
 * ``Report.md`` - Includes hyperparameters.<br/>
 * ``result.png`` - Shows the cumulative rewards after training.<br/>
 * ``actor_checkpoint.pth`` - Contains the parameters of the loca network of the actor.<br/>
