@@ -11,20 +11,20 @@ The project environment is similar to, but not identical Reacher environment on 
 ![Alt Text](https://video.udacity-data.com/topher/2018/June/5b1ea778_reacher/reacher.gif)
 
 # Requirements
-tensorflow==1.7.1
-Pillow>=4.2.1
-matplotlib
-numpy>=1.11.0
-jupyter
-pytest>=3.2.2
-docopt
-pyyaml
-protobuf==3.5.2
-grpcio==1.11.0
-torch==0.4.0
-pandas
-scipy
-ipykernel
+tensorflow==1.7.1<br/>
+Pillow>=4.2.1<br/>
+matplotlib<br/>
+numpy>=1.11.0<br/>
+jupyter<br/>
+pytest>=3.2.2<br/>
+docopt<br/>
+pyyaml<br/>
+protobuf==3.5.2<br/>
+grpcio==1.11.0<br/>
+torch==0.4.0<br/>
+pandas<br/>
+scipy<br/>
+ipykernel<br/>
 
 # The Repository Structure
 * ``DDPG_Reacher-Final.ipynb`` - Includes the environment, agent, model, and DQN functions.<br/>
