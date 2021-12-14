@@ -19,7 +19,7 @@ and <a href="https://www.codecogs.com/eqnedit.php?latex=\bg_white&space;\mu'(s|\
 respectively (so two actors and two critics) used for calculating the target values. <br/>
 <a href="https://www.codecogs.com/eqnedit.php?latex=\bg_white&space;\theta'\leftarrow\tau\theta&plus;(1-\tau)\theta'" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\bg_white&space;\theta'\leftarrow\tau\theta&plus;(1-\tau)\theta'" title="\theta'\leftarrow\tau\theta+(1-\tau)\theta'" /></a> 
 with 
-<a href="https://www.codecogs.com/eqnedit.php?latex=\tau&space;\ll1" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\tau&space;\ll1" title="\tau \ll1" /></a>. This means the target values are constrained to change slowly, greatly improving the stability of learning.<br/>
+<a href="https://www.codecogs.com/eqnedit.php?latex=\bg_white&space;\tau&space;\ll1" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\bg_white&space;\tau&space;\ll1" title="\tau \ll1" /></a>. This means the target values are constrained to change slowly, greatly improving the stability of learning.<br/>
 
 # Hyperparameters
 ### The parameters are based on the paper (Lillicrap et al., 2015)
