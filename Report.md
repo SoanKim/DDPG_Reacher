@@ -6,12 +6,17 @@ The code is base on the pendulum modeling of [the repository of Udacity](https:/
 # DDPG Algorithm
 Modifies DPG inspired by DQN, which enables to use large state and action spaces online.<br/>
 Policy gradients are stochastic, but DDPG is deterministic. Deterministic policy outputs the actual action instead of a probability.<br/>
-$ \mu'(s_t) = \mu(s_t|\theta^\mu_t)+N $
+```math
+\mu'(s_t) = \mu(s_t|\theta^\mu_t)+N
+```
 DPG Algorithm is to select an action according to a prob distribution ($\mu$ = deterministic policy)<br/>
-$ \nabla_\theta^\mu J \approx \mathbb{E}s_t\backsim \rho^\beta[\nabla_{\theta\mu} Q(s, a|\theta^Q)|_s=_{st}, _a = _{\mu(st|\theta^\mu)} $
-$ =\mathbb{E}s_t\backsim \rho^\beta[\nabla_{\theta\mu} Q(s, a|\theta^Q)|_s=_{st}, _a = _{\mu(st)}\nabla_{\theta\mu}\mu(s|\theta^\mu)|_{s=s_t}] $
-Create a copy of actor critic network $ Q'(s,a|\theta^{Q'}) $ and $ \mu'(s|\theta^{Q'}) $ respectively (so two actors and two critics) used for calculating the target values. <br/>
-$ \theta' \leftarrow \tau\theta + (1-\tau)\theta'$$ with $ \tau \ll1 $. This means the target values are constrained to change slowly, greatly improving the stability of learning.<br/>
+```math
+\nabla_\theta^\mu J \approx \mathbb{E}s_t\backsim \rho^\beta[\nabla_{\theta\mu} Q(s, a|\theta^Q)|_s=_{st}, _a = _{\mu(st|\theta^\mu)}
+=\mathbb{E}s_t\backsim \rho^\beta[\nabla_{\theta\mu} Q(s, a|\theta^Q)|_s=_{st}, _a = _{\mu(st)}\nabla_{\theta\mu}\mu(s|\theta^\mu)|_{s=s_t}]
+```
+Create a copy of actor critic network <br/>
+$$Q'(s,a|\theta^{Q'})$$ and $$\mu'(s|\theta^{Q'})$$ respectively (so two actors and two critics) used for calculating the target values. <br/>
+$\theta'$ $\leftarrow$ $\tau$ $\theta$ + $(1-\tau)$ $\theta'$ with $$\tau \ll1 $$. This means the target values are constrained to change slowly, greatly improving the stability of learning.<br/>
 
 # Hyperparameters
 ### The parameters are based on the paper (Lillicrap et al., 2015)
