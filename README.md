@@ -35,5 +35,5 @@ ipykernel
 
 # Ideas for Future Work
 * Hyperparameters would be fine-tuned.
-* The accumulated reward decreased after 270th episode, which should be investigated. 
+* The reward plot seems to need more convergence.
 * [The Actor-Dueling-Critic Method for Reinforcement Learning](https://europepmc.org/article/pmc/6479875#B19-sensors-19-01547) would be implemented. In the continuous action space, we cannot output the estimation of each possible action’s advantage value. To do so, we should manually divide the action space and estimate the advantage of the action interval in each state. Through this change, the agent could learn which action interval is good when facing a specific state and pick the action belong to this interval.
