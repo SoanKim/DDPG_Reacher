@@ -16,7 +16,7 @@ DPG Algorithm is to select an action according to a prob distribution ($\mu$ = d
 Create a copy of actor critic network
 <a href="https://www.codecogs.com/eqnedit.php?latex=\bg_white&space;Q'(s,a|\theta^{Q'})" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\bg_white&space;Q'(s,a|\theta^{Q'})" title="Q'(s,a|\theta^{Q'})" /></a> 
 and <a href="https://www.codecogs.com/eqnedit.php?latex=\bg_white&space;\mu'(s|\theta^{Q'})" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\bg_white&space;\mu'(s|\theta^{Q'})" title="\mu'(s|\theta^{Q'})" /></a> 
-respectively (so two actors and two critics) used for calculating the target values. <br/>
+respectively (so two actors and two critics) used for calculating the target values.
 <a href="https://www.codecogs.com/eqnedit.php?latex=\bg_white&space;\theta'\leftarrow\tau\theta&plus;(1-\tau)\theta'" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\bg_white&space;\theta'\leftarrow\tau\theta&plus;(1-\tau)\theta'" title="\theta'\leftarrow\tau\theta+(1-\tau)\theta'" /></a> 
 with 
 <a href="https://www.codecogs.com/eqnedit.php?latex=\bg_white&space;\tau&space;\ll1" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\bg_white&space;\tau&space;\ll1" title="\tau \ll1" /></a>. This means the target values are constrained to change slowly, greatly improving the stability of learning.<br/>
