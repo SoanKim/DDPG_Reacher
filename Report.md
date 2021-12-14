@@ -6,17 +6,16 @@ The code is base on the pendulum modeling of [the repository of Udacity](https:/
 # DDPG Algorithm
 Modifies DPG inspired by DQN, which enables to use large state and action spaces online.<br/>
 Policy gradients are stochastic, but DDPG is deterministic. Deterministic policy outputs the actual action instead of a probability.<br/>
-![formula](https://render.githubusercontent.com/render/math?math=\color{white}\large\mu'(s_t) = \mu(s_t|\theta^\mu_t)+N)
-
-
+<a href="https://www.codecogs.com/eqnedit.php?latex=\mu'(s_t)&space;=&space;\mu(s_t|\theta^\mu_t)&plus;N)" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\mu'(s_t)&space;=&space;\mu(s_t|\theta^\mu_t)&plus;N)" title="\mu'(s_t) = \mu(s_t|\theta^\mu_t)+N)" /></a>
 DPG Algorithm is to select an action according to a prob distribution ($\mu$ = deterministic policy)<br/>
-```math
-\nabla_\theta^\mu J \approx \mathbb{E}s_t\backsim \rho^\beta[\nabla_{\theta\mu} Q(s, a|\theta^Q)|_s=_{st}, _a = _{\mu(st|\theta^\mu)}
-=\mathbb{E}s_t\backsim \rho^\beta[\nabla_{\theta\mu} Q(s, a|\theta^Q)|_s=_{st}, _a = _{\mu(st)}\nabla_{\theta\mu}\mu(s|\theta^\mu)|_{s=s_t}]
-```
+
+<a href="https://www.codecogs.com/eqnedit.php?latex=\nabla_\theta^\mu&space;J&space;\approx&space;\mathbb{E}s_t\backsim&space;\rho^\beta[\nabla_{\theta\mu}&space;Q(s,&space;a|\theta^Q)|_s=_{st},&space;_a&space;=&space;_{\mu(st|\theta^\mu)}" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\nabla_\theta^\mu&space;J&space;\approx&space;\mathbb{E}s_t\backsim&space;\rho^\beta[\nabla_{\theta\mu}&space;Q(s,&space;a|\theta^Q)|_s=_{st},&space;_a&space;=&space;_{\mu(st|\theta^\mu)}" title="\nabla_\theta^\mu J \approx \mathbb{E}s_t\backsim \rho^\beta[\nabla_{\theta\mu} Q(s, a|\theta^Q)|_s=_{st}, _a = _{\mu(st|\theta^\mu)}" /></a>
+
+<a href="https://www.codecogs.com/eqnedit.php?latex==\mathbb{E}s_t\backsim&space;\rho^\beta[\nabla_{\theta\mu}&space;Q(s,&space;a|\theta^Q)|_s=_{st},&space;_a&space;=&space;_{\mu(st)}\nabla_{\theta\mu}\mu(s|\theta^\mu)|_{s=s_t}]" target="_blank"><img src="https://latex.codecogs.com/gif.latex?=\mathbb{E}s_t\backsim&space;\rho^\beta[\nabla_{\theta\mu}&space;Q(s,&space;a|\theta^Q)|_s=_{st},&space;_a&space;=&space;_{\mu(st)}\nabla_{\theta\mu}\mu(s|\theta^\mu)|_{s=s_t}]" title="=\mathbb{E}s_t\backsim \rho^\beta[\nabla_{\theta\mu} Q(s, a|\theta^Q)|_s=_{st}, _a = _{\mu(st)}\nabla_{\theta\mu}\mu(s|\theta^\mu)|_{s=s_t}]" /></a>
+
 Create a copy of actor critic network <br/>
-$$Q'(s,a|\theta^{Q'})$$ and $$\mu'(s|\theta^{Q'})$$ respectively (so two actors and two critics) used for calculating the target values. <br/>
-$\theta'$ $\leftarrow$ $\tau$ $\theta$ + $(1-\tau)$ $\theta'$ with $$\tau \ll1 $$. This means the target values are constrained to change slowly, greatly improving the stability of learning.<br/>
+<a href="https://www.codecogs.com/eqnedit.php?latex=Q'(s,a|\theta^{Q'})" target="_blank"><img src="https://latex.codecogs.com/gif.latex?Q'(s,a|\theta^{Q'})" title="Q'(s,a|\theta^{Q'})" /></a> and <a href="https://www.codecogs.com/eqnedit.php?latex=\mu'(s|\theta^{Q'})" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\mu'(s|\theta^{Q'})" title="\mu'(s|\theta^{Q'})" /></a> respectively (so two actors and two critics) used for calculating the target values. <br/>
+<a href="https://www.codecogs.com/eqnedit.php?latex=\theta'\leftarrow\tau\theta&plus;(1-\tau)\theta'" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\theta'\leftarrow\tau\theta&plus;(1-\tau)\theta'" title="\theta'\leftarrow\tau\theta+(1-\tau)\theta'" /></a> with <a href="https://www.codecogs.com/eqnedit.php?latex=\tau&space;\ll1" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\tau&space;\ll1" title="\tau \ll1" /></a>. This means the target values are constrained to change slowly, greatly improving the stability of learning.<br/>
 
 # Hyperparameters
 ### The parameters are based on the paper (Lillicrap et al., 2015)
