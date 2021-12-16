@@ -24,13 +24,16 @@ with
 # Hyperparameters
 ### The parameters are based on the paper (Lillicrap et al., 2015)
 <pre>
-BUFFER_SIZE = int(1e5)  # replay buffer size</br>
-BATCH_SIZE = 128        # minibatch size</br>
-GAMMA = 0.99            # discount factor</br>
-TAU = 1e-3              # for soft update of target parameters</br>
-LR_ACTOR = 1e-4         # learning rate of the actor(Kinma & Ba, 2014)</br>
-LR_CRITIC = 1e-3        # learning rate of the critic(Kinma & Ba, 2014)</br>
-WEIGHT_DECAY = 0        # L2 weight decay</br>
+BUFFER_SIZE = int(1e6)  # replay buffer size<br/>
+BATCH_SIZE = 256        # minibatch size. The bigger, the better (cf. 128) <br/>
+GAMMA = 0.99            # discount factor<br/>
+TAU = 1e-3              # for soft update of target parameters<br/>
+LR_ACTOR = 1e-4         # learning rate of the actor. The bigger, the worse (cf. le-3). <br/>
+LR_CRITIC = 1e-3        # learning rate of the critic<br/>
+WEIGHT_DECAY = 0        # L2 weight decay<br/>
+UPDATE_EVERY = 20       # skip training steps. The bigger, the faster (cf. 2). <br/>
+SAMPLES  = 10           # number of samples when training<br/>
+num_agents = 20         # number of agents. The bigger, more stable (cf. 1). <br/>
 </pre>
 
 # Code Implementation
@@ -42,6 +45,4 @@ DDPG_Reacher-Final.ipynb consists of four parts: ``Network``(both actor and crit
 * ``main`` - Contains the parameters of the local network of the actor.<br/>
 
 # Ideas for Future Work
-* Hyperparameters would be fine-tuned.
-* The reward plot seems to need more convergence.
 * [The Actor-Dueling-Critic Method for Reinforcement Learning](https://europepmc.org/article/pmc/6479875#B19-sensors-19-01547) would be implemented. In the continuous action space, we cannot output the estimation of each possible action’s advantage value. To do so, we should manually divide the action space and estimate the advantage of the action interval in each state. Through this change, the agent could learn which action interval is good when facing a specific state and pick the action belong to this interval.
