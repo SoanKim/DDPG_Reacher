@@ -3,7 +3,7 @@ This is the second project of [Deep Reinforcement Learning Nanodegree](https://
 The code is base on the pendulum modeling of [the repository of Udacity](https://github.com/udacity/deep-reinforcement-learning/tree/master/ddpg-pendulum).
 - [Continuous Control](https://github.com/udacity/deep-reinforcement-learning/tree/master/p2_continuous-control): In the second project, I train an robotic arm to reach target locations.
 
-# DDPG Algorithm
+## DDPG Algorithm
 Modifies DPG inspired by DQN, which enables to use large state and action spaces online.<br/>
 Policy gradients are stochastic, but DDPG is deterministic. Deterministic policy outputs the actual action instead of a probability.<br/>
 <a href="https://www.codecogs.com/eqnedit.php?latex=\bg_white&space;\mu'(s_t)&space;=&space;\mu(s_t|\theta^\mu_t)&plus;N)" target="_blank"><img src="https://latex.codecogs.com/png.latex?\bg_white&space;\mu'(s_t)&space;=&space;\mu(s_t|\theta^\mu_t)&plus;N)" title="\mu'(s_t) = \mu(s_t|\theta^\mu_t)+N)" /></a><br/>
@@ -21,7 +21,7 @@ respectively (so two actors and two critics) used for calculating the target val
 with 
 <a href="https://www.codecogs.com/eqnedit.php?latex=\bg_white&space;\tau&space;\ll1" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\bg_white&space;\tau&space;\ll1" title="\tau \ll1" /></a>. This means the target values are constrained to change slowly, greatly improving the stability of learning.<br/>
 
-# Hyperparameters
+## Hyperparameters
 ### The parameters are based on the paper (Lillicrap et al., 2015)
 <pre>
 BUFFER_SIZE = int(1e6)  # replay buffer size<br/>
@@ -36,7 +36,7 @@ SAMPLES  = 10           # number of samples when training<br/>
 num_agents = 20         # number of agents. The bigger, more stable (cf. 1). <br/>
 </pre>
 
-# Code Implementation
+## Code Implementation
 DDPG_Reacher-Final.ipynb consists of four parts: ``Network``(both actor and critic), ``agent``, ``replay buffer``, and ``main``.<br/>
 
 * ``Network(both actor and critic)`` - Q network: state-action value function. Includes local and target networks of actor and critic.<br/>
@@ -44,5 +44,5 @@ DDPG_Reacher-Final.ipynb consists of four parts: ``Network``(both actor and crit
 * ``replay buffer`` - The network is trained off-policy with samples from a replay buffer (finite sized cache R with (s_t, a_t, r_t, s_{t+1}) to minimize correlations between examples. t each time step, the actor and critic are updated by sampling a minibatch uniformly from the buffer .<br/>
 * ``main`` - Contains the parameters of the local network of the actor.<br/>
 
-# Ideas for Future Work
+## Ideas for Future Work
 * [The Actor-Dueling-Critic Method for Reinforcement Learning](https://europepmc.org/article/pmc/6479875#B19-sensors-19-01547) would be implemented. In the continuous action space, we cannot output the estimation of each possible action’s advantage value. To do so, we should manually divide the action space and estimate the advantage of the action interval in each state. Through this change, the agent could learn which action interval is good when facing a specific state and pick the action belong to this interval.
