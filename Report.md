@@ -1,5 +1,5 @@
 # Report
-This is the second project of [Deep Reinforcement Learning Nanodegree](https://www.udacity.com/course/deep-reinforcement-learning-nanodegree--nd893) program at Udacity. The projects use rich simulation environments from [Unity ML-Agents](https://github.com/Unity-Technologies/ml-agents). 
+This is the second project of [Deep Reinforcement Learning Nanodegree](https://www.udacity.com/course/deep-reinforcement-learning-nanodegree--nd893) program of Udacity. The projects use rich simulation environments from [Unity ML-Agents](https://github.com/Unity-Technologies/ml-agents). 
 The code is base on the pendulum modeling of [the repository of Udacity](https://github.com/udacity/deep-reinforcement-learning/tree/master/ddpg-pendulum).
 - [Continuous Control](https://github.com/udacity/deep-reinforcement-learning/tree/master/p2_continuous-control): In the second project, I train an robotic arm to reach target locations.
 
